@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <script>
+            function f1() {
+                let x=document.getElementById("v1").value
+                let currencyFrom=document.getElementById("s1").value
+                let currencyTo=document.getElementById("s2").value
+
+                console.log(x + " "+currencyFrom+" "+currencyTo)
+                let output = -1
+                
+                switch (currencyFrom) {
+                    
+                    case "Rupees" :
+                        if(currencyTo==="Dollar"){
+                            output=x*0.012      
+                            document.getElementById("span1").innerHTML=`<p>&#8377 ${x}  -> &#36 ${output}</p>`            
+                        }
+                        if(currencyTo==="Euros"){
+                            output=x*0.011    
+                            document.getElementById("span1").innerHTML=`<p>&#8377 ${x}  -> &#8364 ${output}</p>`              
+                        }
+                        if(currencyTo==="Dinar"){
+                            output=x*0.0037      
+                            document.getElementById("span1").innerHTML=`<p>&#8377 ${x}  -> KD ${output}</p>`            
+                        }
+                        if(currencyTo==="Pound"){
+                            output=x* 0.00953 
+                            document.getElementById("span1").innerHTML=`<p>&#8377 ${x}  -> &#163 ${output}</p>`              
+                        }
+                        if(currencyTo==="Japanese Yen"){
+                            output=x*1.73   
+                            document.getElementById("span1").innerHTML=`<p>&#8377 ${x}  -> &#165 ${output}</p>`               
+                        }
+                        break;  
+                        
+
+
+                    // second case
+                    
+                    
+                    
+                    default:
+                        break;
+                }
+                // console.log("output"+ output)
+                
+
+            }
+        </script>
+        
+    </head>
+    <body>
+        <style>
+            
+            body {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 18px;
+                line-height: 1.5;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+
+            h2 {
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            div {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            input[type="number"], select {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type="button"] {
+                background-color: #4CAF50; /* Green */
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 4px;
+                }
+
+                input[type="button"]:hover {
+                background-color: #45a049; /* Darker green */
+                }
+
+                h4 {
+                text-align: center;
+                }
+           
+        </style>
+        <h2><b><center>Currency Converter</center></b></h2>
+        <div style="text-align: center"> 
+            <div style="width: 50%; margin-left: 20 auto; text-align: left " >
+ Enter the value : <input type="number"  id="v1" >
+            <br>
+            <br>
+            
+            From : <select id="s1">
+                <option value="none" selected disabled hidden>Select an Option</option> 
+                <option>Rupees</option>
+                <option>Dollar</option>
+                <option>Euros</option>
+                <option>Dinar</option>
+                <option>Pound</option>
+                <option>Japanese Yen</option>
+            </select>
+     
+            <br>
+            <br>
+            
+            To  :  <select id="s2" >
+                <option value="none" selected disabled hidden>Select an Option</option> 
+                <option>Rupees</option>
+                <option>Dollar</option>
+                <option>Euros</option>
+                <option>Dinar</option>
+                <option>Pound</option>
+                <option>Japanese Yen</option>     
+            </select>
+            <br>
+            <br>
+        
+           <center> <input type="button" value="Convert" onclick=f1() class="bt"> </center>
+            <h4>output : <span id="span1"></span></h4>
+        </div>
+    </div>
+      
+    </body>
+
+</html>
